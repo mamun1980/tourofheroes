@@ -1,0 +1,14 @@
+<h2>My Heroes</h2>
+<mat-grid-list cols="2" rowHeight="2:1">
+  <mat-grid-tile>
+      <ul class="heroes">
+        <li *ngFor="let hero of heroes"
+          [class.selected]="hero === selectedHero"
+          (click)="onSelect(hero)">
+          <a routerLink="/detail/{{hero.id}}">
+            <span class="badge">{{hero.id}}</span> {{hero.name}}
+          </a>
+        </li>
+      </ul>
+  </mat-grid-tile>
+</mat-grid-list>
